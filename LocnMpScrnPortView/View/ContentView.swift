@@ -52,13 +52,20 @@ struct ContentView: View
     {
         VStack
         {
-            if let locationLatLng = addressGeocode.gcodedResultsData?.results.geometry.location
+            
+            Text ("Un coded address: \(addressUncoded)")
+            Text("The corresponding latitude and longitude is")
+            if let locationLatLng = addressGeocode.gcodedResultsData?.results
             {
-                Text ("address: \(addressUncoded)")
-                Text ("Latitude:\( locationLatLng.lat)")
-                Text ("Latitude:\(locationLatLng.lng)")
-
-            }// close if let locationLatLng = addressGeocode.gcodedResultsData?.results.geometry
+                
+                ForEach(resultsData, id: \geometry)
+                {
+                    location in
+                        Text ("Latitude:\(location.lat)")
+                        Text ("Latitude:\(location.lng)")
+                }
+            }//
+            
             else
             {
                 Text("Geocoding data not available")

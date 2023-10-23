@@ -49,18 +49,20 @@ import Combine
 /// this is because the first element that is returned in the JSON file is "results"
 struct geocodeResultsData: Decodable
 {
-    var results: [resultsGeometry]
+    var results: [resultsData]
+
     
 }// close struct geocodeResultsData: Decodable
 
+
 // ================================================================================
 /// Under "results" there are a number of elements including "place_id", however we are only interested in the latitude and longitude that is found under "geometry" Element
-struct resultsGeometry : Decodable
+struct resultsData : Decodable
 {
     var geometry: geometryLocation
 
-
 }// close struct geometryResults : Decodable
+
 
 // ================================================================================
 /// under the "geometry" Element is the "Location" Element that contains the latitude and longitude

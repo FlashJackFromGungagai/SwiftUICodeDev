@@ -5,6 +5,32 @@
 //  Created by mlittle-macmini-20200921 on 21/10/2023.
 //
 
+/*
+
+About:
+——————————————
+ This code is based on "WeatherAppDemoApp.swift" by
+  by Shekhar Kalra on 3/9/2023 and extended to this requirement. 
+ 
+
+Change History:
+——————————————
+
+
+Version :
+——————————————
+
+
+Contact:
+——————————————
+Mike Little
+Mob:    +613 476 136 482
+Email:  "s9905648@student.rmit.edu"
+
+*/
+
+
+
 import Foundation
 import Foundation
 import SwiftUI
