@@ -44,7 +44,7 @@ struct ContentView: View
     // Properties
     @ObservedObject var addressGeocode = addressGeocodeLatLng()
     /// this is creating a new Observed object instance of the class "addressGeocodeLatLng()"
-    let addressUncoded: String = "36 lusher road, croydon, victoria"
+    let addressUncoded: String = "25 grange road, kew, victoria"
     let apiKey = "AIzaSyA5qIzGasLtxrzm2vY2CxZ-OcTLy5VDTmA"
     
     
@@ -55,23 +55,27 @@ struct ContentView: View
             
             Text ("Un coded address: \(addressUncoded)")
             Text("The corresponding latitude and longitude is")
-            if let locationLatLng = addressGeocode.gcodedResultsData?.results
+            
+            let locationResultsArray = addressGeocode.gcodedResultsData?.results[0]
+            let locationGeometry = locationResultsArray?.geometry
+            let locationLocation = locationGeometry?.location
+            //let locationLat = locationLocation?.lat
+            //let locationlng = locationLocation?.lng
+            
+            if let locationLocation = locationGeometry?.location
             {
-                
-                ForEach(resultsData, id: \geometry)
-                {
-                    location in
-                        Text ("Latitude:\(location.lat)")
-                        Text ("Latitude:\(location.lng)")
-                }
-            }//
+                        Text ("Latitude:\(locationLocation.lat)")
+                        Text ("Latitude:\(locationLocation.lng)")
+
+            }// close if let locationLocation = locationGeometry?.location
             
             else
             {
                 Text("Geocoding data not available")
 
-
-            }// close if let locationLatLng = addressGeocode.gcodedResultsData?.results.geometry
+            }// close if let locationLocation = locationGeometry?.location
+             // close if let locationLatLng = addressGeocode.gcodedResultsData?.results.geometry
+            
             
         }// close VStack
         .onAppear
