@@ -30,23 +30,24 @@ Email:  "s9905648@student.rmit.edu"
 
 
 import SwiftUI
+import Combine
 import MapKit
 
+//=============================================================================
 struct TestMapView: View
 {   //melbourne, victoria
-    //@State var lat: Double = -37.8136
-    //@State var lng: Double = 144.9631
+    //@State var latitud: Double = -37.8136
+    //@State var longitud: Double = 144.9631
     
     // perth, Western Australia
-    @State var lat: Double = -31.9523
-    @State var lng: Double = 115.8613
+    @State var latitud: Double = -31.9523
+    @State var longitud: Double = 115.8613
     
     
     
     @State var navToMapIsActive: Bool = false
     
-    
- 
+    //———————————————————————————————————————————————————————
     var body: some View
     {
         NavigationView
@@ -54,27 +55,31 @@ struct TestMapView: View
             VStack
             {
                 Text("Show the map for the following location:")
-                Text("latitude:\(lat) and longitude: \(lng)")
+                // here you want to pass in
+                Text("latitude:\(latitud) and longitude: \(longitud)")
                 Button("Show Map")
                 {
                     navToMapIsActive.toggle()
                 }
                 .sheet(isPresented: $navToMapIsActive )
                 {
-                    ViewMap(lat:$lat,lng:$lng )
+                    ViewMap(latitud:$latitud,longitud:$longitud )
+                    // this calls the coresponding map
                     
                 }// close ".sheet(isPresented: $navToMapIsActive )
-            }// closeVStack
-        
+                
+            }// close VStack
         
         }// close NavigationView
 
-        
-
-        
      }//close var body: some View
-}
+    
+    //———————————————————————————————————————————————————————
+}// close struct TestMapView: View
 
+
+
+//=============================================================================
 struct TestMapView_Previews: PreviewProvider
 {
     static var previews: some View
@@ -82,3 +87,4 @@ struct TestMapView_Previews: PreviewProvider
         TestMapView()
     }
 }
+//=============================================================================

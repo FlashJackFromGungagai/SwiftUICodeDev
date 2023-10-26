@@ -11,12 +11,10 @@
 		184369422ADE26EC00F58C1A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184369412ADE26EC00F58C1A /* ContentView.swift */; };
 		184369442ADE26ED00F58C1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184369432ADE26ED00F58C1A /* Assets.xcassets */; };
 		184369472ADE26ED00F58C1A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184369462ADE26ED00F58C1A /* Preview Assets.xcassets */; };
-		1855C9312AE2A2DE004C8697 /* JSONOutputFromGoogleGeocoder.json in Resources */ = {isa = PBXBuildFile; fileRef = 1855C9302AE2A2DE004C8697 /* JSONOutputFromGoogleGeocoder.json */; };
 		1855C9382AE35ECC004C8697 /* GeocodeDataStruture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855C9372AE35ECC004C8697 /* GeocodeDataStruture.swift */; };
-		1855C93A2AE37098004C8697 /* addressGeocodeLatLng.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855C9392AE37098004C8697 /* addressGeocodeLatLng.swift */; };
+		1855C93A2AE37098004C8697 /* addressGeoDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855C9392AE37098004C8697 /* addressGeoDecoding.swift */; };
 		1855C93C2AE3DFD5004C8697 /* ViewMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855C93B2AE3DFD5004C8697 /* ViewMap.swift */; };
-		18BC9F752AE60F2F00958173 /* TestMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC9F742AE60F2F00958173 /* TestMapView.swift */; };
-		18BC9F772AE618BC00958173 /* JSONOutputfromWeatherAppDemoApp.json in Resources */ = {isa = PBXBuildFile; fileRef = 18BC9F762AE618BC00958173 /* JSONOutputfromWeatherAppDemoApp.json */; };
+		1886F6452AE8F59D0052504D /* AddressDecodeLatLng.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886F6442AE8F59D0052504D /* AddressDecodeLatLng.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,12 +23,10 @@
 		184369412ADE26EC00F58C1A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		184369432ADE26ED00F58C1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		184369462ADE26ED00F58C1A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		1855C9302AE2A2DE004C8697 /* JSONOutputFromGoogleGeocoder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JSONOutputFromGoogleGeocoder.json; sourceTree = "<group>"; };
 		1855C9372AE35ECC004C8697 /* GeocodeDataStruture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeDataStruture.swift; sourceTree = "<group>"; };
-		1855C9392AE37098004C8697 /* addressGeocodeLatLng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addressGeocodeLatLng.swift; sourceTree = "<group>"; };
+		1855C9392AE37098004C8697 /* addressGeoDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addressGeoDecoding.swift; sourceTree = "<group>"; };
 		1855C93B2AE3DFD5004C8697 /* ViewMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMap.swift; sourceTree = "<group>"; };
-		18BC9F742AE60F2F00958173 /* TestMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMapView.swift; sourceTree = "<group>"; };
-		18BC9F762AE618BC00958173 /* JSONOutputfromWeatherAppDemoApp.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JSONOutputfromWeatherAppDemoApp.json; sourceTree = "<group>"; };
+		1886F6442AE8F59D0052504D /* AddressDecodeLatLng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressDecodeLatLng.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +62,6 @@
 				1843693F2ADE26EC00F58C1A /* LocnMpScrnPortViewApp.swift */,
 				1855C9362AE35E41004C8697 /* View */,
 				1855C9352AE35E33004C8697 /* Model */,
-				1855C9342AE35DF2004C8697 /* temp */,
 				184369432ADE26ED00F58C1A /* Assets.xcassets */,
 				184369452ADE26ED00F58C1A /* Preview Content */,
 			);
@@ -81,20 +76,12 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		1855C9342AE35DF2004C8697 /* temp */ = {
-			isa = PBXGroup;
-			children = (
-				18BC9F762AE618BC00958173 /* JSONOutputfromWeatherAppDemoApp.json */,
-				1855C9302AE2A2DE004C8697 /* JSONOutputFromGoogleGeocoder.json */,
-			);
-			path = temp;
-			sourceTree = "<group>";
-		};
 		1855C9352AE35E33004C8697 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				1855C9372AE35ECC004C8697 /* GeocodeDataStruture.swift */,
-				1855C9392AE37098004C8697 /* addressGeocodeLatLng.swift */,
+				1886F6442AE8F59D0052504D /* AddressDecodeLatLng.swift */,
+				1855C9392AE37098004C8697 /* addressGeoDecoding.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,11 +89,26 @@
 		1855C9362AE35E41004C8697 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				184369412ADE26EC00F58C1A /* ContentView.swift */,
-				1855C93B2AE3DFD5004C8697 /* ViewMap.swift */,
-				18BC9F742AE60F2F00958173 /* TestMapView.swift */,
+				1886F6422AE8CCF70052504D /* Calling Views */,
+				1886F6432AE8CD4F0052504D /* Map Presentation */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1886F6422AE8CCF70052504D /* Calling Views */ = {
+			isa = PBXGroup;
+			children = (
+				184369412ADE26EC00F58C1A /* ContentView.swift */,
+			);
+			path = "Calling Views";
+			sourceTree = "<group>";
+		};
+		1886F6432AE8CD4F0052504D /* Map Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				1855C93B2AE3DFD5004C8697 /* ViewMap.swift */,
+			);
+			path = "Map Presentation";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,10 +169,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18BC9F772AE618BC00958173 /* JSONOutputfromWeatherAppDemoApp.json in Resources */,
 				184369472ADE26ED00F58C1A /* Preview Assets.xcassets in Resources */,
 				184369442ADE26ED00F58C1A /* Assets.xcassets in Resources */,
-				1855C9312AE2A2DE004C8697 /* JSONOutputFromGoogleGeocoder.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,9 +184,9 @@
 				1855C9382AE35ECC004C8697 /* GeocodeDataStruture.swift in Sources */,
 				184369422ADE26EC00F58C1A /* ContentView.swift in Sources */,
 				184369402ADE26EC00F58C1A /* LocnMpScrnPortViewApp.swift in Sources */,
+				1886F6452AE8F59D0052504D /* AddressDecodeLatLng.swift in Sources */,
 				1855C93C2AE3DFD5004C8697 /* ViewMap.swift in Sources */,
-				1855C93A2AE37098004C8697 /* addressGeocodeLatLng.swift in Sources */,
-				18BC9F752AE60F2F00958173 /* TestMapView.swift in Sources */,
+				1855C93A2AE37098004C8697 /* addressGeoDecoding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

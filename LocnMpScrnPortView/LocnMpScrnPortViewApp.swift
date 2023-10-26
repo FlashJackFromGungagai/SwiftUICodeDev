@@ -37,6 +37,7 @@ struct LocnMpScrnPortViewApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            //TestMapView()
         }
     }
 }
