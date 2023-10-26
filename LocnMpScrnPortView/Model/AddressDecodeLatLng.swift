@@ -44,19 +44,23 @@ class AddressDecodeLatLng:ObservableObject
     /// This method decodes the latitude information for from the JSON data returned from Google address geocoded data
     func retrieveLatitude ( ) -> Double
     {
-        let locationResultsArray = geocodedaddress.getgcodedResultsData().results[0]
-        let locationGeometry = locationResultsArray.geometry
+        let locationResultsArray = geocodedaddress.gcodedResultsData?.results[0]
+        let locationGeometry = locationResultsArray?.geometry
                 //var locationLocation = locationGeometry?.location
                 //let locationLat = locationLocation?.lat
                 //let locationlng = locationLocation?.lng
                 
-        let locationElement = locationGeometry.location
+        let locationElement = locationGeometry?.location
         if (locationElement != nil)
         {
-            print ("Latitude:\(locationElement.lat)")
-            latitud = locationElement.lat
-                    
-
+            print ("Latitude:\(locationElement?.lat)")
+            //latitud = locationElement?.lat
+            /*  */
+             if locationElement?.lat != 0.00
+            {
+                 latitud = locationElement?.lat
+            }
+                 
          }// close if let locationLocation = locationGeometry?.location
                 
         else
@@ -74,20 +78,19 @@ class AddressDecodeLatLng:ObservableObject
     func retrievelongitude ( ) -> Double
     {
         
-        let locationResultsArray = geocodedaddress.getgcodedResultsData().results[0]
-        let locationGeometry = locationResultsArray.geometry
+        let locationResultsArray = geocodedaddress.gcodedResultsData?.results[0]
+        let locationGeometry = locationResultsArray?.geometry
                 //var locationLocation = locationGeometry?.location
                 //let locationLat = locationLocation?.lat
                 //let locationlng = locationLocation?.lng
                 
         
-        let locationElement = locationGeometry.location
+        let locationElement = locationGeometry?.location
         if (locationElement != nil)
         {
-            print ("longitude:\(locationElement.lng)")
-            longitud = locationElement.lng
+            print ("longitude:\(locationElement?.lng)")
+            longitud = locationElement?.lng
                     
-
          }// close if let locationLocation = locationGeometry?.location
                 
         else

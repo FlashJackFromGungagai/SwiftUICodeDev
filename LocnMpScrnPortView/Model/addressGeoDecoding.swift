@@ -48,7 +48,7 @@ class addressGeoDecoding: ObservableObject
     /// of any view that relies on the data. This means that whenever "gcodedResultsData"
     /// all views using that object will be reloaded to reflect those changes.
     ///
-    var gcodedResultsData: geocodeResultsData? = nil
+    @Published var gcodedResultsData: geocodeResultsData? = nil
 
     private var cancellables = Set<AnyCancellable>()
     /// this means that when an object that implements "Cancellable" has a cancel
@@ -123,7 +123,7 @@ class addressGeoDecoding: ObservableObject
     
     
     //-----------------------------------------------------
-    
+    /*
     func getgcodedResultsData() -> geocodeResultsData
     {
         //var gcResultsData : geocodeResultsData? = nil
@@ -132,6 +132,11 @@ class addressGeoDecoding: ObservableObject
         if gCodedResults != nil
         {
             return gCodedResults
+            /*
+             I am getting a weird error message here:
+             "Value of optional type 'geocodeResultsData?' must be unwrapped to a value of type 'geocodeResultsData'"
+             yet een wehen
+             */
         }
         else
         {
@@ -139,8 +144,9 @@ class addressGeoDecoding: ObservableObject
         }
         //return gcodedResultsData?
          
+         
     }// close func getgcodedResultsData() -> geocodeResultsData
-    
+     */
     
 }
 // ===================================================================================
