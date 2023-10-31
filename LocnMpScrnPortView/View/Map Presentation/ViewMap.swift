@@ -75,13 +75,8 @@ struct ViewMap: View
                                         span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
 
                                     )//close MKCoordinateRegion
-
-
     }//close
 
-    
-    
-    
 }// closestruct ViewMap: View
 
 //=============================================================================

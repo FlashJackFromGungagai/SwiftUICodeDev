@@ -21,8 +21,8 @@ class AddressDecodeLatLng:ObservableObject
     var gcdedResultsData: geocodeResultsData? = nil
     
     ///initialise the variables representing the latitude and longitude
-    @State var latitud:  Double = 0.00
-    @State var longitud: Double = 0.00
+    @State var latitud:  Double? = 0.00
+    @State var longitud: Double? = 0.00
     
     
     //—————————————————————————————————————————————————————————
@@ -36,9 +36,7 @@ class AddressDecodeLatLng:ObservableObject
     {
         geocodedaddress.fetchGecondingLatLngData(addressUncoded: addressUncoded)
         
-        
     }// close func retrieveGecondingLatLngData(addressUncoded : addressUncoded )
-    
     
     //—————————————————————————————————————————————————————————
     /// This method decodes the latitude information for from the JSON data returned from Google address geocoded data
@@ -46,21 +44,13 @@ class AddressDecodeLatLng:ObservableObject
     {
         let locationResultsArray = geocodedaddress.gcodedResultsData?.results[0]
         let locationGeometry = locationResultsArray?.geometry
-                //var locationLocation = locationGeometry?.location
-                //let locationLat = locationLocation?.lat
-                //let locationlng = locationLocation?.lng
-                
         let locationElement = locationGeometry?.location
         if (locationElement != nil)
         {
-            print ("Latitude:\(locationElement?.lat)")
-            //latitud = locationElement?.lat
-            /*  */
-             if locationElement?.lat != 0.00
-            {
                  latitud = locationElement?.lat
-            }
-                 
+                 return latitud
+                // get an error message Value of optional type 'Double?' must be unwrapped to a value of type 'Double'
+
          }// close if let locationLocation = locationGeometry?.location
                 
         else
@@ -69,8 +59,6 @@ class AddressDecodeLatLng:ObservableObject
 
          }// close if let locationLocation = locationGeometry?.location
         
-        return latitud
-
     }// close retrieveLatitude ( )
     
     //—————————————————————————————————————————————————————————
@@ -80,17 +68,13 @@ class AddressDecodeLatLng:ObservableObject
         
         let locationResultsArray = geocodedaddress.gcodedResultsData?.results[0]
         let locationGeometry = locationResultsArray?.geometry
-                //var locationLocation = locationGeometry?.location
-                //let locationLat = locationLocation?.lat
-                //let locationlng = locationLocation?.lng
-                
-        
         let locationElement = locationGeometry?.location
         if (locationElement != nil)
         {
-            print ("longitude:\(locationElement?.lng)")
             longitud = locationElement?.lng
-                    
+            //print ("longitude:\(longitud)")
+            return longitud
+            
          }// close if let locationLocation = locationGeometry?.location
                 
         else
@@ -99,10 +83,7 @@ class AddressDecodeLatLng:ObservableObject
 
          }// close if let locationLocation = locationGeometry?.location
         
-        return longitud
-
     }// close retrieveLatitude ( )
-    
     
 }// close class AddressDecodeLatLng:ObservableObject
 
