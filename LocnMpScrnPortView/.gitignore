@@ -1,0 +1,5 @@
+# General
+.DS_Store
+
+# specific project files to ignore
+.plist
