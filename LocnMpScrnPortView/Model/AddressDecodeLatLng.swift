@@ -46,8 +46,23 @@ class AddressDecodeLatLng:ObservableObject
     /// message dad utan be called to stop any in progress work, and any allocated resource
     /// to be freed up
     
-    let apiKey = "AIzaSyA5qIzGasLtxrzm2vY2CxZ-OcTLy5VDTmA"
-    ///This is the unique api key that allows my REST API call to Google Geocode to return a value.
+
+    private var apiKey: String
+    {
+      get
+      {
+        ////get the location of the plist
+        guard let filePath = Bundle.main.path(forResource: "information", ofType: "plist") else {
+          fatalError("Couldn't find file 'information.plist'.")
+        }
+        // retrieve the apikey
+        let plist = NSDictionary(contentsOfFile: filePath)
+        guard let value = plist?.object(forKey: "API_KEY") as? String else {
+          fatalError("Couldn't find key 'API_KEY' in 'information.plist'.")
+        }
+        return value
+      }
+    }
     
    
     

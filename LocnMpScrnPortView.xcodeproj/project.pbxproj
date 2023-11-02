@@ -13,6 +13,7 @@
 		184369472ADE26ED00F58C1A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184369462ADE26ED00F58C1A /* Preview Assets.xcassets */; };
 		1855C9382AE35ECC004C8697 /* GeocodeDataStruture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855C9372AE35ECC004C8697 /* GeocodeDataStruture.swift */; };
 		1855C93C2AE3DFD5004C8697 /* ViewMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855C93B2AE3DFD5004C8697 /* ViewMap.swift */; };
+		1872F0362AF3E51C0058D281 /* information.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1872F0352AF3E51C0058D281 /* information.plist */; };
 		1886F6452AE8F59D0052504D /* AddressDecodeLatLng.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886F6442AE8F59D0052504D /* AddressDecodeLatLng.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		184369462ADE26ED00F58C1A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1855C9372AE35ECC004C8697 /* GeocodeDataStruture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeDataStruture.swift; sourceTree = "<group>"; };
 		1855C93B2AE3DFD5004C8697 /* ViewMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMap.swift; sourceTree = "<group>"; };
+		1872F0352AF3E51C0058D281 /* information.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = information.plist; sourceTree = "<group>"; };
 		1886F6442AE8F59D0052504D /* AddressDecodeLatLng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressDecodeLatLng.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,6 +43,7 @@
 		184369332ADE26EC00F58C1A = {
 			isa = PBXGroup;
 			children = (
+				1872F0352AF3E51C0058D281 /* information.plist */,
 				1843693E2ADE26EC00F58C1A /* LocnMpScrnPortView */,
 				1843693D2ADE26EC00F58C1A /* Products */,
 			);
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				184369472ADE26ED00F58C1A /* Preview Assets.xcassets in Resources */,
+				1872F0362AF3E51C0058D281 /* information.plist in Resources */,
 				184369442ADE26ED00F58C1A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
