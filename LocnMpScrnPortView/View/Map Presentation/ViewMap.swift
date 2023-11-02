@@ -38,8 +38,13 @@ struct ViewMap: View
     //———————————————————————————————————————————————————————
     //———————————————————————————————————————————————————————
     // Properties
-    @Binding var latitud: Double
-    @Binding var longitud: Double
+    //@Binding var latitud: Double
+    @State var latitud: Double
+    
+    //@Binding var longitud: Double
+    @State var longitud: Double
+    
+    /// this initialises the map region to London, UK
     @State private var region =
             MKCoordinateRegion (
                                 center: CLLocationCoordinate2D(latitude: 0.00, longitude: 0.00),
@@ -58,7 +63,7 @@ struct ViewMap: View
         Map(coordinateRegion: $region  )
             .onAppear()
             {
-                region = mapRegionforLatLng(latitude:latitud,longitude:longitud)
+                region = mapRegionforLatLng(Latitude:latitud,Longitude:longitud)
             }
         
     }// close var body: some View
@@ -67,8 +72,12 @@ struct ViewMap: View
     //———————————————————————————————————————————————————————
     //———————————————————————————————————————————————————————
     // Methods
+    
+    
+    //-------------------------------------------------------
+    // MARK - 
     /// This method passes in the latitude and longitude and returns the MKCoordinateRegion centred on the  latitude and longitude
-    func mapRegionforLatLng(latitude: Double,longitude: Double)-> MKCoordinateRegion
+    func mapRegionforLatLng(Latitude: Double,Longitude: Double)-> MKCoordinateRegion
     {
         return MKCoordinateRegion  (
                                         center: CLLocationCoordinate2D(latitude: latitud, longitude: longitud),
@@ -82,12 +91,15 @@ struct ViewMap: View
 //=============================================================================
 struct ViewMap_Previews: PreviewProvider
 {
-    @State  static var latitud: Double = 0.0
-    @State  static var longitud: Double = 0.0
+    // @State  static var latitud: Double = 0.0
+   static var latitud: Double = 0.0
+    
+    // @State  static var longitud: Double = 0.0
+    static var longitud: Double = 0.0
     
     static var previews: some View
     {
-        ViewMap(latitud:$latitud, longitud:$longitud)
+        ViewMap(latitud:latitud, longitud:longitud)
     }
 }
 

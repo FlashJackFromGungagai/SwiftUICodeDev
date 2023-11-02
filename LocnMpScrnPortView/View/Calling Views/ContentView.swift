@@ -48,8 +48,11 @@ struct ContentView: View
     @ObservedObject var addressGeocoded = AddressDecodeLatLng()
     
     ///initialise the variables representing the latitude and longitude
-    @State var latitud:  Double = 0.00
-    @State var longitud: Double = 0.00
+    //@State var latitud:  Double = 0.00
+    var latitud:  Double
+    
+    // @State var longitud: Double = 0.00
+    var longitud: Double
     
     let addressUncoded: String = "25 grange road, kew, victoria"
     /// this represents the adress string that is to be passed in and the map presentation to be returned..
@@ -63,20 +66,34 @@ struct ContentView: View
     {
         VStack
         {
-            
             Text ("The un-coded address: \(addressUncoded)")
             Text("The corresponding latitude and longitude is")
-
-            Text ("Latitude:\(addressGeocoded.retrieveLatitude())")
-            Text ("longitude:\(addressGeocoded.retrievelongitude())")
+             
+            if  latitud == addressGeocoded.retrieveLatitude()
+             {
+                 Text ("Latitude:\( latitud )")
+             }
+            else
+            {
+                Text("No value for latitude retrieved")
+            }
             
+            if longitud == addressGeocoded.retrievelongitude()
+            {
+                Text ("longitude:\( longitud  )")
+            }
+            else
+            {
+                Text("No value for logitude retrieved")
+            }
+
             Button("Show Map")
                 {
                     navToMapIsActive.toggle()
                 }
                 .sheet(isPresented: $navToMapIsActive )
                 {
-                    //ViewMap(latitud:$latitud,longitud:$longitud )
+                    //ViewMap(Latitude:latitud, Longitude:longitud )
                     // this calls the coresponding map
                     
                 }// close ".sheet(isPresented: $navToMapIsActive )
@@ -84,7 +101,9 @@ struct ContentView: View
         }// close VStack
         .onAppear
         {
-            addressGeocoded.retrieveGecondingLatLngData(addressUncoded: addressUncoded)
+
+            /// This calls the method that fetches the latitude and longitude for the street address being passed in. 
+            addressGeocoded.fetchGecondingLatLngData(addressUncoded: addressUncoded)
 
         }// close ".onAppear"
         
@@ -96,9 +115,17 @@ struct ContentView: View
 
 struct ContentView_Previews: PreviewProvider
 {
+    // @State  static var latitud: Double = 0.0
+   static var latitud: Double = 0.0
+    
+    // @State  static var longitud: Double = 0.0
+    static var longitud: Double = 0.0
+    
     static var previews: some View
     {
-        ContentView()
+        //ContentView()
+        ContentView(latitud:latitud, longitud:longitud)
+        //ViewMap(latitud:latitud, longitud:longitud)
     }
 }
 

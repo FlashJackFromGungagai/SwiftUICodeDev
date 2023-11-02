@@ -33,10 +33,19 @@ Email:  "s9905648@student.rmit.edu"
 import SwiftUI
 
 @main
-struct LocnMpScrnPortViewApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
+struct LocnMpScrnPortViewApp: App
+{
+    // @State  static var latitud: Double = 0.0
+   var latitud: Double = 0.0
+    
+    // @State  static var longitud: Double = 0.0
+    var longitud: Double = 0.0
+    
+    var body: some Scene
+    {
+        WindowGroup
+        {
+            ContentView(latitud:latitud, longitud:longitud)
             //TestMapView()
         }
     }
