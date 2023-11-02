@@ -93,7 +93,7 @@ struct ContentView: View
                 }
                 .sheet(isPresented: $navToMapIsActive )
                 {
-                    //ViewMap(Latitude:latitud, Longitude:longitud )
+                    ViewMap(latitud:latitud, longitud:longitud )
                     // this calls the coresponding map
                     
                 }// close ".sheet(isPresented: $navToMapIsActive )
