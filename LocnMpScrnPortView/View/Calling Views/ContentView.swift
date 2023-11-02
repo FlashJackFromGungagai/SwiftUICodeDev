@@ -71,20 +71,23 @@ struct ContentView: View
              
             if  latitud == addressGeocoded.retrieveLatitude()
              {
-                 Text ("Latitude:\( latitud )")
+                Text("No value for latitude retrieved")
              }
             else
             {
-                Text("No value for latitude retrieved")
+                
+                Text ("Latitude:\( latitud )")
+                
             }
             
             if longitud == addressGeocoded.retrievelongitude()
             {
-                Text ("longitude:\( longitud  )")
+                Text("No value for logitude retrieved")
             }
             else
             {
-                Text("No value for logitude retrieved")
+                
+                Text ("longitude:\( longitud  )")
             }
 
             Button("Show Map")
